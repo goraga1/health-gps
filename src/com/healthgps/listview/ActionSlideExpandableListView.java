@@ -1,5 +1,10 @@
 package com.healthgps.listview;
 
+import com.twotoasters.jazzylistview.JazzyEffect;
+import com.twotoasters.jazzylistview.JazzyHelper;
+
+
+
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
@@ -19,19 +24,30 @@ import android.widget.ListAdapter;
 public class ActionSlideExpandableListView extends SlideExpandableListView {
 	private OnActionClickListener listener;
 	private int[] buttonIds = null;
+	private final JazzyHelper mHelper;
+	
 
 	public ActionSlideExpandableListView(Context context) {
 		super(context);
+		mHelper = init(context, null);
 	}
 
 	public ActionSlideExpandableListView(Context context, AttributeSet attrs) {
 		super(context, attrs);
+		mHelper = init(context, attrs);
 	}
 
 	public ActionSlideExpandableListView(Context context, AttributeSet attrs,
 			int defStyle) {
 		super(context, attrs, defStyle);
+		mHelper = init(context, attrs);
 	}
+	
+	private JazzyHelper init(Context context, AttributeSet attrs) {
+        JazzyHelper helper = new JazzyHelper(context, attrs);
+        super.setOnScrollListener(helper);
+        return helper;
+    }
 
 	public void setItemActionListener(OnActionClickListener listener,
 			int... buttonIds) {
@@ -56,6 +72,36 @@ public class ActionSlideExpandableListView extends SlideExpandableListView {
 		 */
 		public void onClick(View itemView, View clickedView, int position);
 	}
+	
+	@Override
+    public final void setOnScrollListener(OnScrollListener l) {
+        mHelper.setOnScrollListener(l);
+    }
+	
+	public void setTransitionEffect(int transitionEffect) {
+        mHelper.setTransitionEffect(transitionEffect);
+    }
+	
+	public void setTransitionEffect(JazzyEffect transitionEffect) {
+        mHelper.setTransitionEffect(transitionEffect);
+    }
+	
+	public void setShouldOnlyAnimateNewItems(boolean onlyAnimateNew) {
+        mHelper.setShouldOnlyAnimateNewItems(onlyAnimateNew);
+    }
+	
+	 public void setShouldOnlyAnimateFling(boolean onlyFling) {
+	        mHelper.setShouldOnlyAnimateFling(onlyFling);
+	 }
+	 
+	 public void setMaxAnimationVelocity(int itemsPerSecond) {
+	        mHelper.setMaxAnimationVelocity(itemsPerSecond);
+	 }
+	 
+	 public void setSimulateGridWithList(boolean simulateGridWithList) {
+	        mHelper.setSimulateGridWithList(simulateGridWithList);
+	        setClipChildren(!simulateGridWithList);
+	    }
 
 	public void setAdapter(ListAdapter adapter) {
 		super.setAdapter(new WrapperListAdapterImpl(adapter) {

@@ -37,48 +37,59 @@
             android:textSize="20sp" />
     </RelativeLayout>
 
-    <LinearLayout
+   <LinearLayout
         android:id="@+id/expandable"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_blue_light"
-        android:orientation="horizontal" >
-
-        <Button
-            android:id="@+id/buttonA"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="0.5"
-            android:text="Button"
-            android:textColor="#FFF"
-            android:textSize="12sp" />
-
-        <Button
-            android:id="@+id/buttonB"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="0.5"
-            android:text="Button"
-            android:textColor="#FFF"
-            android:textSize="12sp" />
-
-        <Button
-            android:id="@+id/buttonC"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="0.5"
-            android:text="Text"
-            android:textColor="#FFF"
-            android:textSize="12sp" />
+        android:background="@drawable/listviewbackground"
+        android:orientation="vertical" >
         
-        <Button
-            android:id="@+id/buttonD"
+         <TextView
+            android:id="@+id/objectName"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_weight="0.5"
-            android:text="Text"
-            android:textColor="#FFF"
-            android:textSize="12sp" />
+            android:layout_marginLeft="7dp"
+            android:text="Sourcio CJSC"
+            android:textSize="15sp"
+            android:textColor="#fff"
+             />
+         
+          <TextView
+            android:id="@+id/objectAddress"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Alek Manukyan Ave. 15"
+            android:textSize="15sp" 
+            android:textColor="#fff"
+            />
+          
+          <TextView
+            android:id="@+id/objectDistance"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="2.4km"
+            android:textSize="15sp"
+            android:textColor="#fff"
+             />
+          
+          <TextView
+            android:id="@+id/objectMail"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="arshak92@list.ru"
+            android:textSize="15sp" 
+            android:textColor="#fff"
+            />
+          
+           <TextView
+            android:id="@+id/objectTel"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="+37493769774"
+            android:textSize="15sp" 
+            android:textColor="#fff"
+            />
+          
     </LinearLayout>
 
 </LinearLayout>
