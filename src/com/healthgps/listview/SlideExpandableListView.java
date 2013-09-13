@@ -15,6 +15,7 @@ import android.content.Context;
 class SlideExpandableListView extends ListView {
 private SlideExpandableListAdapter adapter;
 
+
 public SlideExpandableListView(Context context) {
 super(context);
 }
