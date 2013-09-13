@@ -31,7 +31,8 @@ public class HomeActivity extends Activity {
 				Intent hospitalList = new Intent(HomeActivity.this, TabLayoutActivity.class);
 				
 				
-				startActivity(hospitalList);overridePendingTransition(R.anim.animation,
+				startActivity(hospitalList);
+				overridePendingTransition(R.anim.animation,
 						R.anim.animation1);
 			//	startActivity(hospitalList);
 				
